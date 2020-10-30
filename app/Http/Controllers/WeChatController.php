@@ -59,7 +59,7 @@ class WeChatController extends Controller
             // 用户的密码需要他在第一次登陆的时候设置
             // 手机号码要进行绑定,要根据用户ID进行异构索引分表
             $result = User::create([
-                'id' => $this->uuid(),
+//                'id' => $this->uuid(),
                 'Openid' => $weChatUserInfo['id'],
                 'username' => $weChatUserInfo['name'],
                 'role_id' => 1,// 角色默认 1 是普通用户

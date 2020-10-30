@@ -3,6 +3,8 @@
 namespace App;
 
 use App\Models\CartItem;
+use App\Models\Order;
+use App\Models\UserAddress;
 use App\Models\UserInfo;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -52,5 +54,15 @@ class User extends Authenticatable
     public function cartItems()
     {
         return $this->hasMany(CartItem::class);
+    }
+
+    public function order()
+    {
+        return $this->hasMany(Order::class,'user_id');
+    }
+
+    public function addresses()
+    {
+        return $this->hasMany(UserAddress::class);
     }
 }

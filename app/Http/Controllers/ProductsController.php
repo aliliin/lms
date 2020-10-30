@@ -64,7 +64,7 @@ class ProductsController extends Controller
             throw new \Exception('等待商品进行审核！', 1);
         }
 
-        $product = $product->where('id', $product->id)->with([
+        $product = $product->where('id', $product->id)->InvalidRequestExceptionwith([
             'skus',
             'productproperties',
             'images',

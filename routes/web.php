@@ -30,6 +30,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('products/{product}', "ProductsController@show")->name('products.show');
     Route::post('cart', 'CartController@add')->name('cart.add');
     Route::get('cart', 'CartController@index')->name('cart.index');
+
+    /** 收货地址 */
+    Route::get('user_address', 'UserAddressesController@index')->name('user.addresses');
+    Route::get('orders', 'OrdersController@store');
 });
 
 
