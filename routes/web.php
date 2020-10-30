@@ -33,7 +33,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     /** 收货地址 */
     Route::get('user_address', 'UserAddressesController@index')->name('user.addresses');
-    Route::get('orders', 'OrdersController@store');
+    Route::get('orders', 'OrdersController@store')->name('orders.store');
+    Route::post('orders', 'OrdersController@store')->name('orders.add');
 });
 
 
